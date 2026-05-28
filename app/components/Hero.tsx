@@ -1,78 +1,83 @@
+import Image from "next/image";
+import heroImage from "../../docs/assets/hero.png";
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen bg-[#F7F0E6] flex items-center px-6 md:px-10 pt-16"
+      className="relative min-h-[100svh] flex flex-col pt-16"
     >
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center py-20">
-        {/* Contenu */}
-        <div>
-          <span className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#C06040] bg-[#C06040]/10 px-4 py-2 rounded-full mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C06040]" />
+      {/* Background */}
+      <Image
+        src={heroImage}
+        alt="Alexanne — Soleia Massage"
+        fill
+        className="object-cover object-center brightness-75"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2D2416]/60 via-[#2D2416]/30 to-[#2D2416]/10" />
+
+      {/* Contenu principal — centré verticalement */}
+      <div className="relative z-10 flex-1 flex items-center px-6 md:px-10 lg:px-16">
+        <div className="max-w-6xl mx-auto w-full py-12 md:py-16">
+          <span className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#E8C4A0] bg-[#E8C4A0]/15 px-4 py-2 rounded-full mb-6 md:mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E8C4A0]" />
             Massage & Bien-être
           </span>
 
-          <h1 className="font-[family-name:var(--font-serif)] font-light text-5xl md:text-6xl lg:text-7xl text-[#2D2416] leading-[1.1] mb-6">
-            Soleia <em className="text-[#C06040] not-italic">Massage</em>
+          <h1 className="font-[family-name:var(--font-serif)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F0E6] leading-[1.05] mb-5 md:mb-7 max-w-2xl">
+            Soleia <em className="text-[#E8A882] not-italic">Massage</em>
           </h1>
 
-          <p className="text-[#7A6652] text-base md:text-lg leading-relaxed mb-10 max-w-md">
+          <p className="text-[#F7F0E6]/75 text-sm sm:text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-sm sm:max-w-md">
             Offrez-vous une parenthèse de douceur pour ralentir, apaiser le
             corps et le mental, retrouver votre énergie, vous reconnecter.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
-              href="mailto:contact@soleiamassage.fr"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C06040] text-white text-sm rounded-full hover:bg-[#A04E30] transition-colors duration-200 shadow-md shadow-[#C06040]/20"
+              href="tel:+33615288890"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C06040] text-white text-sm rounded-full hover:bg-[#A04E30] transition-colors duration-200 shadow-md shadow-[#C06040]/30"
             >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              Prendre RDV par email
-            </a>
-            <a
-              href="tel:+33600000000"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#C06040]/40 text-[#C06040] text-sm rounded-full hover:bg-[#C06040]/8 transition-colors duration-200"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              Prendre RDV par téléphone
+              Appeler pour réserver
+            </a>
+            <a
+              href="https://www.instagram.com/soleia.massage.alexanne"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#F7F0E6]/40 text-[#F7F0E6] text-sm rounded-full hover:bg-[#F7F0E6]/10 transition-colors duration-200"
+            >
+              <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+              </svg>
+              Nous suivre sur Instagram
             </a>
           </div>
-
-          <div className="flex items-center gap-8 mt-14 pt-10 border-t border-[#2D2416]/10">
-            <div>
-              <p className="font-[family-name:var(--font-serif)] text-3xl text-[#2D2416]">5+</p>
-              <p className="text-xs text-[#7A6652] mt-0.5">Ans d&apos;expérience</p>
-            </div>
-            <div className="w-px h-8 bg-[#2D2416]/10" />
-            <div>
-              <p className="font-[family-name:var(--font-serif)] text-3xl text-[#2D2416]">4</p>
-              <p className="text-xs text-[#7A6652] mt-0.5">Techniques maîtrisées</p>
-            </div>
-            <div className="w-px h-8 bg-[#2D2416]/10" />
-            <div>
-              <p className="font-[family-name:var(--font-serif)] text-3xl text-[#2D2416]">100%</p>
-              <p className="text-xs text-[#7A6652] mt-0.5">Clients satisfaits</p>
-            </div>
-          </div>
         </div>
+      </div>
 
-        {/* Photo placeholder */}
-        <div className="relative hidden md:block">
-          <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-[#7A9A72]/20" />
-          <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full bg-[#C06040]/15" />
-
-          <div className="relative aspect-[3/4] rounded-3xl bg-gradient-to-br from-[#D4B896] to-[#BFA080] overflow-hidden flex items-end">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[#8A6040]/60 text-xs tracking-widest uppercase">Photo</span>
+      {/* Stats — ancrées en bas */}
+      <div className="relative z-10 px-6 md:px-10 lg:px-16 pb-8 md:pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="border-t border-[#F7F0E6]/15 pt-6 md:pt-8 flex items-center gap-6 sm:gap-10 md:gap-14">
+            <div>
+              <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl text-[#F7F0E6]">5+</p>
+              <p className="text-xs text-[#F7F0E6]/60 mt-0.5 whitespace-nowrap">Ans d&apos;expérience</p>
             </div>
-            <div className="relative w-full p-6 bg-white/20 backdrop-blur-sm">
-              <p className="font-[family-name:var(--font-serif)] text-white text-xl">Alexanne</p>
-              <p className="text-white/70 text-xs mt-0.5">Praticienne en massage bien-être</p>
+            <div className="w-px h-7 bg-[#F7F0E6]/20 shrink-0" />
+            <div>
+              <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl text-[#F7F0E6]">4</p>
+              <p className="text-xs text-[#F7F0E6]/60 mt-0.5 whitespace-nowrap">Techniques maîtrisées</p>
+            </div>
+            <div className="w-px h-7 bg-[#F7F0E6]/20 shrink-0" />
+            <div>
+              <p className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl text-[#F7F0E6]">100%</p>
+              <p className="text-xs text-[#F7F0E6]/60 mt-0.5 whitespace-nowrap">Clients satisfaits</p>
             </div>
           </div>
         </div>

@@ -28,10 +28,10 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <a href="#hero" className="flex flex-col leading-none">
-          <span className="font-[family-name:var(--font-serif)] text-xl text-[#2D2416] tracking-wide">
+          <span className={`font-[family-name:var(--font-serif)] text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-[#2D2416]" : "text-[#F7F0E6]"}`}>
             Soleia Massage
           </span>
-          <span className="text-[10px] tracking-[0.2em] uppercase text-[#7A6652]">
+          <span className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-500 ${scrolled ? "text-[#7A6652]" : "text-[#F7F0E6]/70"}`}>
             par Alexanne
           </span>
         </a>
@@ -41,7 +41,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-[#7A6652] hover:text-[#2D2416] transition-colors duration-200"
+                className={`text-sm transition-colors duration-500 ${scrolled ? "text-[#7A6652] hover:text-[#2D2416]" : "text-[#F7F0E6]/85 hover:text-[#F7F0E6]"}`}
               >
                 {link.label}
               </a>

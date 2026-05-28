@@ -1,3 +1,6 @@
+import Image from "next/image";
+import aboutImage from "../../docs/assets/about.jpg";
+
 export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 px-6 bg-[#EDE0CC]">
@@ -5,8 +8,18 @@ export default function About() {
         {/* Photo */}
         <div className="relative">
           <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-[#C06040]/15" />
-          <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-[#C4A882] to-[#A8886A] overflow-hidden flex items-center justify-center max-w-sm mx-auto md:mx-0">
-            <span className="text-[#7A5A3A]/50 text-xs tracking-widest uppercase">Photo</span>
+          <div className="aspect-[4/5] rounded-3xl overflow-hidden relative max-w-sm mx-auto md:mx-0">
+            <Image
+              src={aboutImage}
+              alt="Alexanne — Praticienne en massage bien-être"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 384px, 448px"
+            />
+            <div className="absolute inset-x-0 bottom-0 px-6 py-6 bg-gradient-to-t from-[#2D2416] via-[#2D2416]/80 to-transparent text-center">
+              <p className="font-[family-name:var(--font-serif)] text-[#F7F0E6] text-lg">Alexanne</p>
+              <p className="text-[#F7F0E6]/70 text-xs tracking-wider mt-0.5">Praticienne en massage bien-être</p>
+            </div>
           </div>
           <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-[#7A9A72]/25" />
         </div>

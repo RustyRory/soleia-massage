@@ -62,9 +62,21 @@ export default function Services() {
           ))}
         </div>
 
-        <p className="text-center font-[family-name:var(--font-serif)] text-lg italic text-[#7A6652] mt-14">
-          &ldquo; Chaque séance est une invitation à revenir vers soi dans la douceur et la présence. &rdquo;
-        </p>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 bg-[#2D2416] rounded-2xl px-8 py-7">
+          <p className="font-[family-name:var(--font-serif)] text-lg italic text-[#F7F0E6]/80 text-center sm:text-left">
+            &ldquo; Chaque séance est une invitation à revenir vers soi dans la douceur et la présence. &rdquo;
+          </p>
+          <div className="shrink-0 text-center">
+            <p className="text-xs tracking-[0.2em] uppercase text-[#C06040] mb-1">Tarif</p>
+            <p className="text-[#F7F0E6] text-sm leading-relaxed">Sur demande, selon la prestation souhaitée</p>
+            <a
+              href="#contact"
+              className="inline-block mt-3 text-xs text-[#C06040] underline underline-offset-2 hover:text-[#E07050] transition-colors"
+            >
+              Me contacter pour en savoir plus
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

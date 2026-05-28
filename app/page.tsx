@@ -6,8 +6,15 @@ import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { getGalleryPhotos } from "@/lib/gallery";
+import { getGoogleReviews } from "@/lib/reviews";
 
-export default function Home() {
+export default async function Home() {
+  const [photos, reviews] = await Promise.all([
+    getGalleryPhotos(),
+    getGoogleReviews(),
+  ]);
+
   return (
     <>
       <Navbar />
@@ -15,8 +22,8 @@ export default function Home() {
         <Hero />
         <Services />
         <About />
-        <Testimonials />
-        <Gallery />
+        <Testimonials reviews={reviews} />
+        <Gallery photos={photos} />
         <Contact />
       </main>
       <Footer />

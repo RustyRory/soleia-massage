@@ -1,18 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
+import type { Photo } from "@/lib/gallery";
 
-const placeholders = [
-  { id: 1, bg: "from-[#D4B896] to-[#C0A07A]" },
-  { id: 2, bg: "from-[#A8C4B0] to-[#8AAA90]" },
-  { id: 3, bg: "from-[#C4A882] to-[#A88A62]" },
-  { id: 4, bg: "from-[#B8C4A8] to-[#98A888]" },
-  { id: 5, bg: "from-[#D0B8A0] to-[#B89878]" },
-  { id: 6, bg: "from-[#A0B8B0] to-[#809890]" },
-];
+type Props = { photos: Photo[] };
 
-export default function Gallery() {
+export default function Gallery({ photos }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -87,21 +82,18 @@ export default function Gallery() {
       {/* Carousel */}
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex gap-4 px-6 md:px-[calc((100vw-72rem)/2+1.5rem)]">
-          {placeholders.map((p) => (
+          {photos.map((p) => (
             <div
               key={p.id}
-              className="flex-none w-72 md:w-80 aspect-[3/4] rounded-2xl overflow-hidden"
+              className="flex-none w-72 md:w-80 aspect-[3/4] rounded-2xl overflow-hidden relative"
             >
-              <div className={`w-full h-full bg-gradient-to-br ${p.bg} flex items-center justify-center`}>
-                <div className="text-center">
-                  <svg className="w-8 h-8 text-white/30 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="M21 15l-5-5L5 21" />
-                  </svg>
-                  <span className="text-white/30 text-xs tracking-widest uppercase">Photo</span>
-                </div>
-              </div>
+              <Image
+                src={p.thumb}
+                alt={p.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 288px, 320px"
+              />
             </div>
           ))}
         </div>
@@ -109,7 +101,7 @@ export default function Gallery() {
 
       {/* Dots */}
       <div className="flex justify-center gap-2 mt-8 px-6">
-        {placeholders.map((_, i) => (
+        {photos.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollTo(i)}
