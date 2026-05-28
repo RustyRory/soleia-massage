@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alexanne Brichon — Massage & Bien-être",
-  description: "Massages bien-être et relaxation à votre service. Prenez soin de vous.",
+  title: "Soleia Massage — Alexanne",
+  description: "Offrez-vous une parenthèse de douceur pour ralentir, apaiser le corps et le mental, retrouver votre énergie, vous reconnecter.",
 };
 
 export default function RootLayout({

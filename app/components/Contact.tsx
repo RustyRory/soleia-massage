@@ -21,7 +21,7 @@ export default function Contact() {
           <div className="space-y-6">
             {[
               { label: "Téléphone", value: "+33 6 00 00 00 00", href: "tel:+33600000000" },
-              { label: "Email", value: "contact@alexannebrichon.fr", href: "mailto:contact@alexannebrichon.fr" },
+              { label: "Email", value: "contact@soleiamassage.fr", href: "mailto:contact@soleiamassage.fr" },
               { label: "Horaires", value: "Lun – Sam : 9h – 19h", href: null },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">

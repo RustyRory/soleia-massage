@@ -1,38 +1,26 @@
-const services = [
+const bienfaits = [
   {
     num: "01",
-    name: "Massage Suédois",
-    description:
-      "Un massage classique aux manœuvres douces et enveloppantes. Idéal pour se détendre et évacuer les tensions du quotidien.",
-    duration: "60 min",
-    price: "70 €",
+    title: "Relâcher les tensions du corps",
+    description: "Un toucher sincère et attentif qui libère les nœuds musculaires et invite le corps à se détendre pleinement.",
     color: "bg-[#C06040]/10 text-[#C06040]",
   },
   {
     num: "02",
-    name: "Massage Californien",
-    description:
-      "Des effleurages longs et fluides qui embrassent tout le corps. Une expérience profondément relaxante et sensorielle.",
-    duration: "75 min",
-    price: "80 €",
+    title: "Apaiser le mental, ralentir",
+    description: "Une présence douce et bienveillante pour calmer le flot des pensées et retrouver un rythme plus naturel.",
     color: "bg-[#7A9A72]/10 text-[#7A9A72]",
   },
   {
     num: "03",
-    name: "Massage aux Pierres Chaudes",
-    description:
-      "La chaleur des pierres volcaniques libère les tensions musculaires en profondeur et favorise un lâcher-prise total.",
-    duration: "90 min",
-    price: "95 €",
+    title: "Se reconnecter à soi, à ses sensations",
+    description: "En étant pleinement à l'écoute de votre corps et de votre énergie, chaque séance devient un retour à soi.",
     color: "bg-[#C06040]/10 text-[#C06040]",
   },
   {
     num: "04",
-    name: "Réflexologie Plantaire",
-    description:
-      "Une technique ciblée sur les zones réflexes du pied pour rééquilibrer l'ensemble des organes et retrouver vitalité.",
-    duration: "45 min",
-    price: "55 €",
+    title: "Retrouver calme et équilibre intérieur",
+    description: "Un espace de confiance et de lâcher-prise pour repartir ressourcé·e, ancré·e et pleinement présent·e.",
     color: "bg-[#7A9A72]/10 text-[#7A9A72]",
   },
 ];
@@ -44,47 +32,39 @@ export default function Services() {
         <div className="flex items-start gap-4 mb-4">
           <div className="w-8 h-0.5 bg-[#C06040] mt-3 shrink-0" />
           <p className="text-xs tracking-[0.2em] uppercase text-[#C06040]">
-            Soins proposés
+            Mes soins
           </p>
         </div>
-        <h2 className="font-[family-name:var(--font-serif)] font-light text-4xl md:text-5xl text-[#2D2416] mb-16 ml-12">
-          Les soins
+        <h2 className="font-[family-name:var(--font-serif)] font-light text-4xl md:text-5xl text-[#2D2416] mb-4 ml-12">
+          Mes Soins & Bienfaits
         </h2>
+        <p className="text-[#7A6652] text-base ml-12 mb-16 max-w-lg">
+          Un moment pour vous recentrer, relâcher et respirer. Mes massages sont
+          pensés pour vous offrir une détente profonde, physique et mentale.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service) => (
+          {bienfaits.map((b) => (
             <div
-              key={service.num}
+              key={b.num}
               className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-[#2D2416]/5"
             >
-              <div className="flex items-start justify-between mb-5">
-                <span
-                  className={`text-xs font-medium tracking-widest px-3 py-1 rounded-full ${service.color}`}
-                >
-                  {service.num}
-                </span>
-                <span className="font-[family-name:var(--font-serif)] text-2xl text-[#2D2416] font-light">
-                  {service.price}
-                </span>
-              </div>
-
+              <span className={`inline-block text-xs font-medium tracking-widest px-3 py-1 rounded-full mb-5 ${b.color}`}>
+                {b.num}
+              </span>
               <h3 className="font-[family-name:var(--font-serif)] text-2xl text-[#2D2416] mb-3">
-                {service.name}
+                {b.title}
               </h3>
-              <p className="text-[#7A6652] text-sm leading-relaxed mb-6">
-                {service.description}
+              <p className="text-[#7A6652] text-sm leading-relaxed">
+                {b.description}
               </p>
-
-              <div className="flex items-center gap-2 text-xs text-[#7A9A72]">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-                {service.duration}
-              </div>
             </div>
           ))}
         </div>
+
+        <p className="text-center font-[family-name:var(--font-serif)] text-lg italic text-[#7A6652] mt-14">
+          &ldquo; Chaque séance est une invitation à revenir vers soi dans la douceur et la présence. &rdquo;
+        </p>
       </div>
     </section>
   );

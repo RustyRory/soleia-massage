@@ -27,11 +27,13 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <a
-          href="#hero"
-          className="font-[family-name:var(--font-serif)] text-xl text-[#2D2416] tracking-wide"
-        >
-          Alexanne Brichon
+        <a href="#hero" className="flex flex-col leading-none">
+          <span className="font-[family-name:var(--font-serif)] text-xl text-[#2D2416] tracking-wide">
+            Soleia Massage
+          </span>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-[#7A6652]">
+            par Alexanne
+          </span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">

@@ -16,27 +16,33 @@ export default function About() {
           <div className="flex items-center gap-4 mb-4">
             <div className="w-8 h-0.5 bg-[#C06040] shrink-0" />
             <p className="text-xs tracking-[0.2em] uppercase text-[#C06040]">
-              À propos
+              À propos de moi
             </p>
           </div>
 
           <h2 className="font-[family-name:var(--font-serif)] font-light text-4xl md:text-5xl text-[#2D2416] mb-8 leading-snug">
-            Prendre soin <br />
-            <em className="not-italic text-[#C06040]">de vous</em>
+            À propos <br />
+            <em className="not-italic text-[#C06040]">de moi</em>
           </h2>
 
           <div className="space-y-4 text-[#7A6652] text-sm leading-relaxed mb-10">
             <p>
-              Praticienne certifiée en massage bien-être, je vous accueille dans
-              un espace pensé pour la sérénité. Mon approche est globale :
-              chaque soin est adapté à vos besoins du moment, qu&apos;il
-              s&apos;agisse de relâcher les tensions, de retrouver de
-              l&apos;énergie ou simplement de vous offrir une pause.
+              Je m&apos;appelle Alexanne, et le bien-être est au cœur de ma
+              façon d&apos;être.
             </p>
             <p>
-              Formée à diverses techniques de massage, je mets ma sensibilité et
-              mon écoute au service de votre bien-être. Chaque séance est unique,
-              comme vous l&apos;êtes.
+              Je propose des moments de présence, de douceur et d&apos;écoute,
+              entièrement dédié à votre détente.
+            </p>
+            <p>
+              Je masse intuitivement en étant pleinement présente, à
+              l&apos;écoute du corps et de l&apos;énergie de chaque personne
+              avec un toucher sincère guidé par le cœur.
+            </p>
+            <p>
+              Mon intention est de vous accompagner à relâcher les tensions,
+              apaiser le mental et vous reconnecter à vous-même, dans un espace
+              de confiance et de lâcher-prise.
             </p>
           </div>
 
