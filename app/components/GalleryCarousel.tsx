@@ -14,6 +14,7 @@ export default function GalleryCarousel({ photos }: Props) {
     slidesToScroll: 1,
   });
 
+  const [mounted, setMounted] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
@@ -21,6 +22,8 @@ export default function GalleryCarousel({ photos }: Props) {
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
   const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -56,7 +59,7 @@ export default function GalleryCarousel({ photos }: Props) {
           <div className="flex gap-3">
             <button
               onClick={scrollPrev}
-              disabled={!canScrollPrev}
+              disabled={mounted && !canScrollPrev}
               aria-label="Photo précédente"
               className="w-12 h-12 rounded-full border border-[#F7F0E6]/20 text-[#F7F0E6] flex items-center justify-center hover:bg-[#F7F0E6]/10 disabled:opacity-30 transition-all"
             >
@@ -66,7 +69,7 @@ export default function GalleryCarousel({ photos }: Props) {
             </button>
             <button
               onClick={scrollNext}
-              disabled={!canScrollNext}
+              disabled={mounted && !canScrollNext}
               aria-label="Photo suivante"
               className="w-12 h-12 rounded-full border border-[#F7F0E6]/20 text-[#F7F0E6] flex items-center justify-center hover:bg-[#F7F0E6]/10 disabled:opacity-30 transition-all"
             >

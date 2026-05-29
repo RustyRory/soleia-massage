@@ -1,0 +1,17 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20,20)">
+    <!-- Rayons longs — cardinaux -->
+    <path d="M 0,-17 C 1.6,-12 1.4,-8.5 0,-7 C -1.4,-8.5 -1.6,-12 0,-17 Z" fill="#C06040" transform="rotate(0)"/>
+    <path d="M 0,-17 C 1.6,-12 1.4,-8.5 0,-7 C -1.4,-8.5 -1.6,-12 0,-17 Z" fill="#C06040" transform="rotate(90)"/>
+    <path d="M 0,-17 C 1.6,-12 1.4,-8.5 0,-7 C -1.4,-8.5 -1.6,-12 0,-17 Z" fill="#C06040" transform="rotate(180)"/>
+    <path d="M 0,-17 C 1.6,-12 1.4,-8.5 0,-7 C -1.4,-8.5 -1.6,-12 0,-17 Z" fill="#C06040" transform="rotate(270)"/>
+    <!-- Rayons courts — diagonaux -->
+    <path d="M 0,-13 C 1.1,-10 1,-8.5 0,-7 C -1,-8.5 -1.1,-10 0,-13 Z" fill="#C06040" opacity="0.65" transform="rotate(45)"/>
+    <path d="M 0,-13 C 1.1,-10 1,-8.5 0,-7 C -1,-8.5 -1.1,-10 0,-13 Z" fill="#C06040" opacity="0.65" transform="rotate(135)"/>
+    <path d="M 0,-13 C 1.1,-10 1,-8.5 0,-7 C -1,-8.5 -1.1,-10 0,-13 Z" fill="#C06040" opacity="0.65" transform="rotate(225)"/>
+    <path d="M 0,-13 C 1.1,-10 1,-8.5 0,-7 C -1,-8.5 -1.1,-10 0,-13 Z" fill="#C06040" opacity="0.65" transform="rotate(315)"/>
+    <!-- Cercle central -->
+    <circle r="6.5" fill="#C06040"/>
+    <circle r="3.5" fill="#E8C4A0"/>
+  </g>
+</svg>

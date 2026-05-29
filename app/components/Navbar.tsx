@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import SoleilLogo from "./SoleilLogo";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -27,13 +28,16 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#hero" className="flex flex-col leading-none">
-          <span className={`font-[family-name:var(--font-serif)] text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-[#2D2416]" : "text-[#F7F0E6]"}`}>
-            Soleia Massage
-          </span>
-          <span className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-500 ${scrolled ? "text-[#7A6652]" : "text-[#F7F0E6]/70"}`}>
-            par Alexanne
-          </span>
+        <a href="#hero" className="flex items-center gap-3 leading-none">
+          <SoleilLogo className="w-7 h-7 shrink-0" scrolled={scrolled} />
+          <div className="flex flex-col">
+            <span className={`font-[family-name:var(--font-serif)] text-xl tracking-wide transition-colors duration-500 ${scrolled ? "text-[#2D2416]" : "text-[#F7F0E6]"}`}>
+              Soleia Massage
+            </span>
+            <span className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-500 ${scrolled ? "text-[#7A6652]" : "text-[#F7F0E6]/70"}`}>
+              par Alexanne
+            </span>
+          </div>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
