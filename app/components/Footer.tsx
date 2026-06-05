@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Marque */}
           <div className="flex items-center justify-between md:block">
             <div>
-              <span className="font-[family-name:var(--font-serif)] text-[#F7F0E6] text-lg md:text-xl block mb-0.5">
+              <span className="font-[family-name:var(--font-serif)] text-[#FAF2EE] text-lg md:text-xl block mb-0.5">
                 Soleia Massage
               </span>
               <p className="text-[#7A6652] text-[10px] tracking-widest uppercase">
@@ -22,7 +22,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram Soleia Massage"
-              className="md:hidden text-[#7A6652] hover:text-[#C06040] transition-colors"
+              className="md:hidden text-[#7A6652] hover:text-[#C07A4A] transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -40,7 +40,7 @@ export default function Footer() {
               { label: "Témoignages", href: "#testimonials" },
               { label: "Contact", href: "#contact" },
             ].map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-[#C06040] transition-colors">
+              <a key={link.label} href={link.href} className="hover:text-[#C07A4A] transition-colors">
                 {link.label}
               </a>
             ))}
@@ -53,7 +53,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram Soleia Massage"
-              className="text-[#7A6652] hover:text-[#C06040] transition-colors"
+              className="text-[#7A6652] hover:text-[#C07A4A] transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         {/* Bas : copyright mobile + GitHub */}
-        <div className="mt-6 pt-4 border-t border-[#F7F0E6]/5 flex items-center justify-between">
+        <div className="mt-6 pt-4 border-t border-[#FAF2EE]/5 flex items-center justify-between">
           <p className="md:hidden text-[#7A6652] text-xs">© 2026 Soleia Massage</p>
           <a
             href="https://github.com/RustyRory/"

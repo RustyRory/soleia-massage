@@ -2,11 +2,11 @@
 
 @theme inline {
   --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --color-sand:       #F7F0E6;
-  --color-sand-dark:  #EDE0CC;
-  --color-terra:      #C06040;
-  --color-terra-dark: #A04E30;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --color-sand:       #FAF2EE;
+  --color-sand-dark:  #E8D8CC;
+  --color-terra:      #C07A4A;
+  --color-terra-dark: #9A5C34;
   --color-sage:       #7A9A72;
   --color-sage-light: #EDF2EB;
   --color-brown:      #2D2416;
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background-color: #F7F0E6;
+  background-color: #FAF2EE;
   color: #2D2416;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

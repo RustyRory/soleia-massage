@@ -3,7 +3,7 @@ const bienfaits = [
     num: "01",
     title: "Relâcher les tensions du corps",
     description: "Un toucher sincère et attentif qui libère les nœuds musculaires et invite le corps à se détendre pleinement.",
-    color: "bg-[#C06040]/10 text-[#C06040]",
+    color: "bg-[#C07A4A]/10 text-[#C07A4A]",
   },
   {
     num: "02",
@@ -15,7 +15,7 @@ const bienfaits = [
     num: "03",
     title: "Se reconnecter à soi, à ses sensations",
     description: "En étant pleinement à l'écoute de votre corps et de votre énergie, chaque séance devient un retour à soi.",
-    color: "bg-[#C06040]/10 text-[#C06040]",
+    color: "bg-[#C07A4A]/10 text-[#C07A4A]",
   },
   {
     num: "04",
@@ -27,11 +27,11 @@ const bienfaits = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 px-6 bg-[#FDF8F0]">
+    <section id="services" className="py-24 md:py-32 px-6 bg-[#FAF2EE]">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-8 h-0.5 bg-[#C06040] mt-3 shrink-0" />
-          <p className="text-xs tracking-[0.2em] uppercase text-[#C06040]">
+          <div className="w-8 h-0.5 bg-[#C07A4A] mt-3 shrink-0" />
+          <p className="text-xs tracking-[0.2em] uppercase text-[#C07A4A]">
             Mes soins
           </p>
         </div>
@@ -63,15 +63,15 @@ export default function Services() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 bg-[#2D2416] rounded-2xl px-8 py-7">
-          <p className="font-[family-name:var(--font-serif)] text-lg italic text-[#F7F0E6]/80 text-center sm:text-left">
+          <p className="font-[family-name:var(--font-serif)] text-lg italic text-[#FAF2EE]/80 text-center sm:text-left">
             &ldquo; Chaque séance est une invitation à revenir vers soi dans la douceur et la présence. &rdquo;
           </p>
           <div className="shrink-0 text-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-[#C06040] mb-1">Tarif</p>
-            <p className="text-[#F7F0E6] text-sm leading-relaxed">Sur demande, selon la prestation souhaitée</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-[#C07A4A] mb-1">Tarif</p>
+            <p className="text-[#FAF2EE] text-sm leading-relaxed">Sur demande, selon la prestation souhaitée</p>
             <a
               href="#contact"
-              className="inline-block mt-3 text-xs text-[#C06040] underline underline-offset-2 hover:text-[#E07050] transition-colors"
+              className="inline-block mt-3 text-xs text-[#C07A4A] underline underline-offset-2 hover:text-[#E07050] transition-colors"
             >
               Me contacter pour en savoir plus
             </a>

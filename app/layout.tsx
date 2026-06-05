@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const atteron = localFont({
-  src: "../docs/atteron/Atteron Personal Use Only.ttf",
+const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
-  weight: "400",
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
 });
 
-const inter = Inter({
+const montserrat = Montserrat({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
@@ -26,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${atteron.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body>{children}</body>
     </html>
   );
