@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { getRawSiteContent } from "@/lib/content";
 import { listPhotos } from "@/lib/drive";
 import ContactForm from "../components/ContactForm";
@@ -14,6 +15,11 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 }
 
 export default async function AdminDashboardPage() {
+  // Google's auth client checks Date.now() internally before its first fetch,
+  // which Cache Components flags unless the route has already been marked
+  // dynamic — connection() makes that explicit regardless of call order.
+  await connection();
+
   const content = await getRawSiteContent();
 
   let photos: Awaited<ReturnType<typeof listPhotos>> = [];
