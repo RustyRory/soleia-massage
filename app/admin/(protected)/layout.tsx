@@ -1,9 +1,17 @@
+import { Suspense } from "react";
 import { verifySession } from "@/lib/auth";
 import { logout } from "../actions";
 
-export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+async function AuthGate({ children }: { children: React.ReactNode }) {
   await verifySession();
+  return <>{children}</>;
+}
 
+function DashboardLoading() {
+  return <p className="text-sm tracking-widest uppercase text-[#7A6652]">Chargement…</p>;
+}
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-[#FAF2EE]">
       <header className="border-b border-[#2D2416]/10 bg-white">
@@ -21,7 +29,11 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           </form>
         </div>
       </header>
-      <main className="max-w-4xl mx-auto px-6 py-10 flex flex-col gap-12">{children}</main>
+      <main className="max-w-4xl mx-auto px-6 py-10 flex flex-col gap-12">
+        <Suspense fallback={<DashboardLoading />}>
+          <AuthGate>{children}</AuthGate>
+        </Suspense>
+      </main>
     </div>
   );
 }
