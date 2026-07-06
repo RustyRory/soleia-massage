@@ -6,6 +6,8 @@ const INSTAGRAM = "https://www.instagram.com/soleia.massage.alexanne";
 const PHONE = "tel:+33615288890";
 const SMS = "sms:+33615288890";
 const EMAIL = "massagesoleia@gmail.com";
+const ADDRESS = "Alba Plage, 140 Quai de Caravello, Quartier Deï, 83600 Fréjus, France";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
 
 export default function Contact() {
   const prenomRef = useRef<HTMLInputElement>(null);
@@ -49,7 +51,7 @@ export default function Contact() {
             Pour réserver une séance ou obtenir des informations, contactez-moi directement.
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* Téléphone + SMS */}
             <div className="grid grid-cols-2 gap-3">
               <a
@@ -102,26 +104,46 @@ export default function Contact() {
               </div>
             </a>
 
-            {/* Horaires */}
-            <div className="flex items-center gap-4 px-4 py-3">
-              <div className="w-10 h-10 rounded-full bg-[#C07A4A]/10 flex items-center justify-center shrink-0">
-                <svg className="w-4 h-4 text-[#C07A4A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
+            {/* Horaires + Lieu */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#C07A4A]/5 border border-[#C07A4A]/10 min-w-0">
+                <div className="w-9 h-9 rounded-full bg-[#C07A4A]/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-[#C07A4A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs tracking-widest uppercase text-[#7A6652] mb-0.5">Horaires</p>
+                  <p className="text-[#2D2416] text-sm truncate">9h – 19h</p>
+                </div>
               </div>
-              <div>
-                <p className="text-xs tracking-widest uppercase text-[#7A6652] mb-0.5">Horaires</p>
-                <p className="text-[#2D2416] text-sm">Lun – Sam : 9h – 19h</p>
-              </div>
+
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={ADDRESS}
+                aria-label={`Ouvrir l'itinéraire vers ${ADDRESS}`}
+                className="group flex items-center gap-3 p-4 rounded-2xl bg-[#C07A4A]/5 border border-[#C07A4A]/10 hover:bg-[#C07A4A]/10 hover:border-[#C07A4A]/20 transition-colors duration-200 min-w-0"
+              >
+                <div className="w-9 h-9 rounded-full bg-[#C07A4A]/10 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-[#C07A4A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs tracking-widest uppercase text-[#7A6652] mb-0.5">Lieu</p>
+                  <p className="text-[#2D2416] text-sm truncate group-hover:text-[#C07A4A] transition-colors">Alba Plage, Fréjus</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Formulaire → mailto */}
         <div>
-          
-
           <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#2D2416]/5 flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">

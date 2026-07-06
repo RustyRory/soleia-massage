@@ -36,8 +36,10 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:flex md:gap-8 gap-x-6 gap-y-2 text-[#7A6652] text-sm">
             {[
               { label: "Services", href: "#services" },
+              { label: "Tarifs", href: "#tarifs" },
               { label: "À propos", href: "#about" },
               { label: "Témoignages", href: "#testimonials" },
+              { label: "Photos", href: "#gallery" },
               { label: "Contact", href: "#contact" },
             ].map((link) => (
               <a key={link.label} href={link.href} className="hover:text-[#C07A4A] transition-colors">

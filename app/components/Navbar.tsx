@@ -5,6 +5,7 @@ import SoleilLogo from "./SoleilLogo";
 
 const links = [
   { label: "Services", href: "#services" },
+  { label: "Tarifs", href: "#tarifs" },
   { label: "À propos", href: "#about" },
   { label: "Témoignages", href: "#testimonials" },
   { label: "Photos", href: "#gallery" },

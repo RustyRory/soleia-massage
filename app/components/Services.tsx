@@ -61,37 +61,6 @@ export default function Services() {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-8 bg-[#2D2416] rounded-2xl px-8 py-7">
-          <div className="text-center sm:text-left">
-            <p className="font-[family-name:var(--font-serif)] text-lg italic text-[#FAF2EE]/80">
-              &ldquo; Chaque séance est une invitation à revenir vers soi dans la douceur et la présence. &rdquo;
-            </p>
-            <p className="text-[#FAF2EE]/50 text-xs tracking-widest uppercase mt-3">
-              Alba Plage — Fréjus
-            </p>
-          </div>
-          <div className="shrink-0 text-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-[#C07A4A] mb-3">Tarifs</p>
-            <div className="flex gap-6">
-              <div>
-                <p className="text-[#FAF2EE] text-2xl font-[family-name:var(--font-serif)]">65€</p>
-                <p className="text-[#FAF2EE]/60 text-xs tracking-widest uppercase mt-1">25 min</p>
-              </div>
-              <div className="w-px bg-[#FAF2EE]/15" />
-              <div>
-                <p className="text-[#FAF2EE] text-2xl font-[family-name:var(--font-serif)]">95€</p>
-                <p className="text-[#FAF2EE]/60 text-xs tracking-widest uppercase mt-1">50 min</p>
-              </div>
-            </div>
-            <a
-              href="#contact"
-              className="inline-block mt-4 text-xs text-[#C07A4A] underline underline-offset-2 hover:text-[#E07050] transition-colors"
-            >
-              Me contacter pour réserver
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
