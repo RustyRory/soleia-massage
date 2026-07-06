@@ -1,31 +1,8 @@
-const bienfaits = [
-  {
-    num: "01",
-    title: "Relâcher les tensions du corps",
-    description: "Un toucher sincère et attentif qui libère les nœuds musculaires et invite le corps à se détendre pleinement.",
-    color: "bg-[#C07A4A]/10 text-[#C07A4A]",
-  },
-  {
-    num: "02",
-    title: "Apaiser le mental, ralentir",
-    description: "Une présence douce et bienveillante pour calmer le flot des pensées et retrouver un rythme plus naturel.",
-    color: "bg-[#7A9A72]/10 text-[#7A9A72]",
-  },
-  {
-    num: "03",
-    title: "Se reconnecter à soi, à ses sensations",
-    description: "En étant pleinement à l'écoute de votre corps et de votre énergie, chaque séance devient un retour à soi.",
-    color: "bg-[#C07A4A]/10 text-[#C07A4A]",
-  },
-  {
-    num: "04",
-    title: "Retrouver calme et équilibre intérieur",
-    description: "Un espace de confiance et de lâcher-prise pour repartir ressourcé·e, ancré·e et pleinement présent·e.",
-    color: "bg-[#7A9A72]/10 text-[#7A9A72]",
-  },
-];
+import type { SiteContent } from "@/lib/defaultContent";
 
-export default function Services() {
+const COLORS = ["bg-[#C07A4A]/10 text-[#C07A4A]", "bg-[#7A9A72]/10 text-[#7A9A72]"];
+
+export default function Services({ content }: { content: SiteContent["services"] }) {
   return (
     <section id="services" className="py-24 md:py-32 px-6 bg-[#FAF2EE]">
       <div className="max-w-6xl mx-auto">
@@ -39,18 +16,19 @@ export default function Services() {
           Mes Soins & Bienfaits
         </h2>
         <p className="text-[#7A6652] text-base ml-12 mb-16 max-w-lg">
-          Un moment pour vous recentrer, relâcher et respirer. Mes massages sont
-          pensés pour vous offrir une détente profonde, physique et mentale.
+          {content.intro}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {bienfaits.map((b) => (
+          {content.bienfaits.map((b, i) => (
             <div
-              key={b.num}
+              key={b.title}
               className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-[#2D2416]/5"
             >
-              <span className={`inline-block text-xs font-medium tracking-widest px-3 py-1 rounded-full mb-5 ${b.color}`}>
-                {b.num}
+              <span
+                className={`inline-block text-xs font-medium tracking-widest px-3 py-1 rounded-full mb-5 ${COLORS[i % COLORS.length]}`}
+              >
+                {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="font-[family-name:var(--font-serif)] text-2xl text-[#2D2416] mb-3">
                 {b.title}

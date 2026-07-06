@@ -1,4 +1,4 @@
-import { cacheLife } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 
 export type Photo = {
   id: string;
@@ -9,6 +9,7 @@ export type Photo = {
 
 export async function getGalleryPhotos(): Promise<Photo[]> {
   "use cache";
+  cacheTag("gallery-photos");
   cacheLife("minutes");
 
   const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import aboutImage from "../../docs/assets/about.jpg";
 
-export default function About() {
+export default function About({ paragraphs }: { paragraphs: string[] }) {
   return (
     <section id="about" className="py-24 md:py-32 px-6 bg-[#E8D8CC]">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
@@ -39,24 +39,9 @@ export default function About() {
           </h2>
 
           <div className="space-y-4 text-[#7A6652] text-sm leading-relaxed mb-10">
-            <p>
-              Je m&apos;appelle Alexanne, et le bien-être est au cœur de ma
-              façon d&apos;être.
-            </p>
-            <p>
-              Je propose des moments de présence, de douceur et d&apos;écoute,
-              entièrement dédié à votre détente.
-            </p>
-            <p>
-              Je masse intuitivement en étant pleinement présente, à
-              l&apos;écoute du corps et de l&apos;énergie de chaque personne
-              avec un toucher sincère guidé par le cœur.
-            </p>
-            <p>
-              Mon intention est de vous accompagner à relâcher les tensions,
-              apaiser le mental et vous reconnecter à vous-même, dans un espace
-              de confiance et de lâcher-prise.
-            </p>
+            {paragraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
 
           <a

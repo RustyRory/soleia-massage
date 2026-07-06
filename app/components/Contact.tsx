@@ -1,15 +1,18 @@
 "use client";
 
 import { useRef } from "react";
+import type { SiteContent } from "@/lib/defaultContent";
 
-const INSTAGRAM = "https://www.instagram.com/soleia.massage.alexanne";
-const PHONE = "tel:+33615288890";
-const SMS = "sms:+33615288890";
-const EMAIL = "massagesoleia@gmail.com";
-const ADDRESS = "Alba Plage, 140 Quai de Caravello, Quartier Deï, 83600 Fréjus, France";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
+export default function Contact({ contact }: { contact: SiteContent["contact"] }) {
+  const PHONE = `tel:${contact.phoneHref}`;
+  const SMS = `sms:${contact.phoneHref}`;
+  const EMAIL = contact.email;
+  const ADDRESS = `${contact.addressName}, ${contact.addressLine}, France`;
+  const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
+  const INSTAGRAM = contact.instagram;
+  const instagramHandle = "@" + contact.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, "");
+  const cityLine = contact.addressLine.split(",").pop()?.trim() ?? contact.addressLine;
 
-export default function Contact() {
   const prenomRef = useRef<HTMLInputElement>(null);
   const nomRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -65,7 +68,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-white/70 text-xs tracking-widest uppercase mb-0.5">Appel</p>
-                  <p className="text-white font-medium text-sm">06 15 28 88 90</p>
+                  <p className="text-white font-medium text-sm">{contact.phoneDisplay}</p>
                 </div>
               </a>
               <a
@@ -79,7 +82,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[#7A6652] text-xs tracking-widest uppercase mb-0.5">SMS</p>
-                  <p className="text-[#2D2416] font-medium text-sm">06 15 28 88 90</p>
+                  <p className="text-[#2D2416] font-medium text-sm">{contact.phoneDisplay}</p>
                 </div>
               </a>
             </div>
@@ -100,7 +103,7 @@ export default function Contact() {
               </div>
               <div className="flex-1">
                 <p className="text-white/50 text-xs tracking-widest uppercase mb-0.5">Instagram</p>
-                <p className="text-white text-sm">@soleia.massage.alexanne</p>
+                <p className="text-white text-sm">{instagramHandle}</p>
               </div>
             </a>
 
@@ -115,7 +118,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs tracking-widest uppercase text-[#7A6652] mb-0.5">Horaires</p>
-                  <p className="text-[#2D2416] text-sm truncate">9h – 19h</p>
+                  <p className="text-[#2D2416] text-sm truncate">{contact.horaires}</p>
                 </div>
               </div>
 
@@ -135,7 +138,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs tracking-widest uppercase text-[#7A6652] mb-0.5">Lieu</p>
-                  <p className="text-[#2D2416] text-sm truncate group-hover:text-[#C07A4A] transition-colors">Alba Plage, Fréjus</p>
+                  <p className="text-[#2D2416] text-sm truncate group-hover:text-[#C07A4A] transition-colors">{contact.addressName}, {cityLine}</p>
                 </div>
               </a>
             </div>

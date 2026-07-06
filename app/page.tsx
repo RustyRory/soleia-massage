@@ -8,23 +8,29 @@ import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { getSiteContent } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const content = await getSiteContent();
+
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Services />
-        <Tarifs />
-        <About />
+        <Hero tagline={content.hero.tagline} contact={content.contact} />
+        <Services content={content.services} />
+        <Tarifs
+          tarifs={content.tarifs}
+          address={{ name: content.contact.addressName, line: content.contact.addressLine }}
+        />
+        <About paragraphs={content.about.paragraphs} />
         <Suspense>
           <Testimonials />
         </Suspense>
         <Suspense>
           <Gallery />
         </Suspense>
-        <Contact />
+        <Contact contact={content.contact} />
       </main>
       <Footer />
     </>

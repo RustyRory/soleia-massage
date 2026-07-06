@@ -1,7 +1,14 @@
 import Image from "next/image";
 import heroImage from "../../docs/assets/hero.png";
+import type { SiteContent } from "@/lib/defaultContent";
 
-export default function Hero() {
+export default function Hero({
+  tagline,
+  contact,
+}: {
+  tagline: string;
+  contact: Pick<SiteContent["contact"], "phoneHref" | "instagram">;
+}) {
   return (
     <section
       id="hero"
@@ -31,13 +38,12 @@ export default function Hero() {
           />
 
           <p className="text-[#FAF2EE]/75 text-sm md:text-lg leading-relaxed mb-6 md:mb-10 max-w-sm md:max-w-md">
-            Offrez-vous une parenthèse de douceur pour ralentir, apaiser le
-            corps et le mental, retrouver votre énergie, vous reconnecter.
+            {tagline}
           </p>
 
           <div className="flex flex-row flex-wrap gap-3">
             <a
-              href="tel:+33615288890"
+              href={`tel:${contact.phoneHref}`}
               className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-6 md:py-3.5 bg-[#C07A4A] text-white text-sm rounded-full hover:bg-[#9A5C34] transition-colors duration-200 shadow-md shadow-[#C07A4A]/30"
             >
               <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -46,7 +52,7 @@ export default function Hero() {
               Appeler
             </a>
             <a
-              href="sms:+33615288890"
+              href={`sms:${contact.phoneHref}`}
               className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-6 md:py-3.5 bg-[#C07A4A]/20 border border-[#C07A4A]/50 text-[#FAF2EE] text-sm rounded-full hover:bg-[#C07A4A]/30 transition-colors duration-200"
             >
               <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -55,7 +61,7 @@ export default function Hero() {
               SMS
             </a>
             <a
-              href="https://www.instagram.com/soleia.massage.alexanne"
+              href={contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-6 md:py-3.5 border border-[#FAF2EE]/40 text-[#FAF2EE] text-sm rounded-full hover:bg-[#FAF2EE]/10 transition-colors duration-200"
